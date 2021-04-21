@@ -1,0 +1,848 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+}
+.container {
+
+min-height: 150vh;
+align-items: center;
+justify-content: center;
+
+}
+.section-title{
+    font-size: 4rem;
+    font-weight: 300;
+    color: black;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    text-align: center; 
+}
+.section-title span{
+    color: rgb(75, 138, 180);}
+
+.cta {
+    display: inline-block;
+    padding: 10px 30px;
+    color: rgb(13, 68, 150);
+    background-color: transparent;
+    border: 2.5px solid rgb(50, 125, 175);
+    border-radius: 10%;
+    font-size: 1.8rem;
+    text-shadow: .08rem .08rem  white ;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    margin-top: 40px;
+    transition: .3s ease background-color;
+
+
+}
+.cta:hover {
+    color: white;
+    background-color: /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#c5deea+0,8abbd7+31,066dab+100;Web+2.0+Blue+3D+%231 */
+background: rgb(197,222,234); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(197,222,234,1) 0%, rgba(138,187,215,1) 31%, rgba(6,109,171,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(197,222,234,1) 0%,rgba(138,187,215,1) 31%,rgba(6,109,171,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(197,222,234,1) 0%,rgba(138,187,215,1) 31%,rgba(6,109,171,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c5deea', endColorstr='#066dab',GradientType=1 ); /* IE6-9 */ ;
+}
+.brand h1{
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: white;
+}
+.brand h1 span{
+color: #AB847E ;
+}
+
+
+/* Header Section  */
+
+/* End Header Section  */
+#header{
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0ex;
+    width: 100vw;
+    height: auto;
+}
+#header .header{
+    min-height: 8vh;
+    background-color: rgba(31, 30, 30, 0.24);
+    transition: .3s ease background-color;
+}
+#header .nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    max-width: 1300px;
+    padding: 0 10px;
+   
+}
+#header .nav-list ul{
+    left: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow-x: hidden;
+    list-style: none;
+    position: absolute;
+    background-color: rgba(31, 30, 30);
+    width: 100vw;
+    height: 100vh;
+    transition: 0.5s ease left;
+
+}
+#header .nav-list ul.active{
+    left: 0%;
+}
+#header .nav-list ul a{
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: .2rem;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    padding: 20px;
+    display: block;
+}
+#header .nav-list ul a::after{
+    content: attr(data-after);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: rgba(240, 248, 255, 0.021) ;
+    font-size: 13rem;
+    letter-spacing: 50px;
+    z-index: -1;
+    transition: .3s ease letter-spacing;
+}
+#header .nav-list ul li:hover a::after{
+    transform: translate(-50%, -50%) scale(1);
+    letter-spacing: initial;
+}
+#header .nav-list ul li:hover a{
+    color: rgb(66, 132, 177);
+}
+
+#header .hamburger{
+    z-index: 100 ;
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    border: 4px solid white;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transform: scale(0.8);
+    margin-right: 20px;
+
+}
+#header .hamburger::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid white;
+    animation: hamburger_puls 1s ease infinite;
+
+}
+#header .hamburger .bar{
+    height: 2px;
+    width: 30px;
+    position: relative;
+    background-color: white;
+    z-index: -1;
+}
+
+#header .hamburger .bar::after, #header .hamburger .bar::before{
+content: '';
+position: absolute;
+height: 100%;
+width: 100%;
+left: 0;
+background-color: white;
+transition: .3s ease;
+transition-property: top, bottom;
+}
+
+#header .hamburger .bar::after{
+    top: 8px;
+}
+#header .hamburger .bar::before{
+    bottom: 8px;
+}
+#header .hamburger.active .bar::before{
+    bottom: 0px;
+}
+
+#header .hamburger.active .bar::after{
+ top: 0;
+}
+
+/* Hero Section  */
+#hero .container {
+display: flex;
+}
+#hero {
+    background-image: url(./Images/worktotravel.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+    min-width: 600px;
+}
+#hero::after{
+
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: .7;
+    z-index: -1;
+}
+#hero .hero{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    justify-content: flex-start;
+}
+#hero h1{
+    display: block;
+    width: fit-content;
+    font-size: 4rem;
+    position: relative;
+    color: transparent;
+animation: text_reveal 1s ease forwards;
+animation-delay: 1s;
+}
+#hero h1:nth-child(1){
+    animation-delay: 1s;
+}
+#hero h1:nth-child(2){
+    animation-delay: 2s;
+}
+#hero h1:nth-child(3){
+    animation: text_reveal_name .5s ease forwards;
+    animation-delay: 3s;
+}
+
+#hero h1 span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    opacity: .95;
+    background-color: /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#c5deea+0,8abbd7+31,066dab+100;Web+2.0+Blue+3D+%231 */
+background: rgb(197,222,234); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(197,222,234,1) 0%, rgba(138,187,215,1) 31%, rgba(6,109,171,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(197,222,234,1) 0%,rgba(138,187,215,1) 31%,rgba(6,109,171,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(197,222,234,1) 0%,rgba(138,187,215,1) 31%,rgba(6,109,171,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c5deea', endColorstr='#066dab',GradientType=1 ); /* IE6-9 */
+
+;
+animation : text_reveal_box 1s ease-in-out;
+animation-delay: .3s;
+}
+#hero h1:nth-child(1) span{
+    animation-delay: .5s;
+}
+#hero h1:nth-child(2) span{
+    animation-delay: 1.5s;
+}
+#hero h1:nth-child(3) span{
+    animation-delay: 2.5s;
+}
+/* #hero .cta {
+    display: inline-block;
+    padding: 10px 30px;
+    color: rgb(13, 68, 150);
+    background-color: transparent;
+    border: 2.5px solid rgb(50, 125, 175);
+    border-radius: 10%;
+    font-size: 1.8rem;
+    text-shadow: .08rem .08rem  white ;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    margin-top: 40px;
+    transition: .3s ease background-color;
+
+
+}
+#hero .cta:hover {
+    color: white;
+    background-color: /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#c5deea+0,8abbd7+31,066dab+100;Web+2.0+Blue+3D+%231 */
+background: rgb(197,222,234); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(197,222,234,1) 0%, rgba(138,187,215,1) 31%, rgba(6,109,171,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(197,222,234,1) 0%,rgba(138,187,215,1) 31%,rgba(6,109,171,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(197,222,234,1) 0%,rgba(138,187,215,1) 31%,rgba(6,109,171,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c5deea', endColorstr='#066dab',GradientType=1 ); /* IE6-9 */ ;
+} */
+/* End Hero Section */
+
+/* Services section*/
+
+#services .services .container{
+    display: flex;
+    max-width: 1200px;
+    margin-top: 250px;
+    margin-bottom: 20px;
+/*     padding: 100px 0;
+ */}
+
+#services .service-top{
+ max-width: 700px;
+ margin: 0 auto;
+ padding-top: 100px;
+}
+#services .service-top p{
+    font-size: 1.5rem;
+    letter-spacing: .05rem;
+    margin: 20px 10px;
+    line-height: 2.5rem;
+    font-weight: 300;
+    text-align: center;
+    
+
+}
+
+#services .service-bottom{
+    display: flex;
+    margin-top: 40px;
+    flex-wrap:wrap;
+}
+#services .service-item span{
+    color: rgb(163, 214, 248);
+    text-shadow: .5px .005px .5px white;
+}
+#services .service-item{
+display: flex;
+justify-content:space-evenly;
+flex-direction: column;
+width: 90%;
+ padding: 30px;
+border-radius: 10px;
+background-image: url(./Images/travelandcoffee.jpeg);
+background-size:cover;
+/* background-repeat: no-repeat;
+ background-position: center;
+ background-attachment: fixed; */
+  margin: 10px 5%;
+position: relative;
+z-index: 1;
+}
+#services .service-item::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px ;
+    background-color: /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#959595+0,0d0d0d+46,010101+50,0a0a0a+53,4e4e4e+76,383838+87,1b1b1b+100;Black+Gloss+Pipe */
+background: rgb(149,149,149); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(149,149,149,1) 0%, rgba(13,13,13,1) 46%, rgba(1,1,1,1) 50%, rgba(10,10,10,1) 53%, rgba(78,78,78,1) 76%, rgba(56,56,56,1) 87%, rgba(27,27,27,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(149,149,149,1) 0%,rgba(13,13,13,1) 46%,rgba(1,1,1,1) 50%,rgba(10,10,10,1) 53%,rgba(78,78,78,1) 76%,rgba(56,56,56,1) 87%,rgba(27,27,27,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(149,149,149,1) 0%,rgba(13,13,13,1) 46%,rgba(1,1,1,1) 50%,rgba(10,10,10,1) 53%,rgba(78,78,78,1) 76%,rgba(56,56,56,1) 87%,rgba(27,27,27,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', endColorstr='#1b1b1b',GradientType=1 ); /* IE6-9 */
+;
+
+    opacity: .6;
+    z-index: -1;
+
+}
+#services .service-item h2{
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    display: block; 
+    margin-left: 8px;
+
+}
+
+
+#services .service-item p{
+    font-size: 1.2rem;
+    color: white;
+    text-align:left;
+    line-height: 1.9rem;
+}
+
+/* End Services section*/
+
+/*  Project section*/ 
+
+#projects .container{
+    display: flex;}
+#projects .projects{
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+#projects .projects-header h1{
+    margin-bottom: 50px;
+}
+
+#projects .all-projects{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#projects .project-item{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 600px;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 1); 
+
+}
+
+#projects .project-info{
+    min-width: 45%;
+    padding: 30px;
+    flex-basis: 50%;
+    height: 100%;
+    display: flex;
+    align-items:flex-start;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url(./Images/items\ background.png);
+    background-size: cover;
+    color: #fff;
+}
+#projects .project-info h1{
+    font-size: 4rem;
+    font-weight: 500;
+}
+#projects .project-info h2{
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+#projects .project-img{
+   min-width: 55%;
+    flex-basis: 50%; 
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+  position: relative;
+}
+
+#projects .project-img img{
+   min-width: 100%;
+}
+
+
+#projects .project-img::after{
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    background: rgb(13, 68, 150);
+    opacity: .2;
+}
+#projects .project-img img{
+    transition: .3s ease transform;
+}
+#projects .project-item:hover .project-img img{
+    transform: scale(1.2);
+}
+
+
+    
+/*  End Project section*/
+
+/*   About section*/ 
+#About .container{
+    display: flex;}
+#About .About{
+    flex-direction: column-reverse;
+    text-align: center ;
+    max-width: 1200px;
+    margin :0 auto;
+    padding: 100px 20px;
+}
+#About .col-left{
+    width: 460px;
+    height: 600px;
+}
+#About .col-right{
+    width: 100%;
+    
+}
+#About .col-right h2{
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: .3rem;
+    margin-bottom: 10px;
+}
+
+#About .col-right p{
+    margin-bottom: 20px;
+    font-size: 1rem ;
+    letter-spacing: .1rem;
+}
+#About .col-right .cta{
+    color: black;
+    margin-bottom: 50px;
+    padding: 10px 20px;
+    font-size: 2rem;
+}
+#About .col-left .about-img img{
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+}
+#About .col-left .about-img{
+    border: 12px solid white ;
+width: 100%;
+height: 100%;
+    position: relative;
+}
+#About .col-left .about-img::after{
+content: '';
+position: absolute;
+left: -33px;
+top: 19px;
+height: 98%;
+width: 98%;
+border: 7px solid rgb(50, 125, 175);
+z-index: -1;
+}
+/*  End About section*/ 
+
+/*  Contact section*/ 
+#contact .container{
+    display: flex;}
+#contact .contact{
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+#contact .contact-items{
+    width: 400px;
+}
+#contact .contact-item{
+    width: 90%;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.705) ;
+    flex-direction: column;
+    transition: .2s ease box-shadow;
+  
+}
+#contact .contact-item:hover{
+   box-shadow: 0px 0px 5px 0 rgba(0, 0, 0, 0.705);
+}
+#contact .icon{
+   
+    width: 50px;   
+/*    min-width: 100%;*/    
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+#contact .contact-info h1{
+    font-size: 2.5rem;
+    font-weight: 1000;
+    margin-bottom: 5px;
+}
+#contact .contact-info h2{
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 2rem;
+    letter-spacing: .1rem;
+}
+
+/*  End Contact section*/ 
+
+/*  Footer section*/ 
+#footer{
+    background-color: #3D75AF ;
+
+}
+#footer .container{
+    display: flex;}
+#footer .footer{
+    min-height: 200px;
+    flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+#footer h2{
+    color: white;
+    font-weight: 500;
+    font-size: 1.8rem;
+    letter-spacing: .1rem;
+    margin: 10px 0px 10px 0px;
+}
+    #footer .social-icon{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        
+    }
+#footer .social-item{
+  margin: 0 5px;
+}
+#footer .social-item img{
+    filter: grayscale(1);
+    transition: .5s ease text-shadow;
+    transition: .4s ease filter;
+}
+#footer .social-item:hover img{
+    filter: grayscale(0);
+}
+#footer p{
+    color: white;
+    font-size: 1.2rem;
+}
+
+/*  End Footer section*/ 
+ 
+ /* keyframes */
+@keyframes text_reveal_box {
+    50% {
+        width: 100%;
+        left: 0;
+    }
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
+
+@keyframes text_reveal {
+    100% {
+        color: white;
+    }
+   
+    }
+@keyframes text_reveal_name {
+    100% {
+        color: rgb(50, 125, 175);
+    }
+   
+    }
+
+@keyframes hamburger_puls {
+    0%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    50%{
+        transform: scale(1.3);
+        opacity: 0.5;
+    }
+    100%{
+        transform: scale(1.6);
+        opacity: 0;
+    }
+}
+/*     Media Query for Tablet*/
+@media only screen and (min-width: 760px){
+    .cta {
+        font-size: 2.5rem;
+        padding: 20px 60px;
+    }
+    h1.section-title{
+        font-size: 6rem;
+
+    }
+    /* hero */
+    #hero h1{
+        font-size: 7rem ;
+    }
+    /* hero */
+
+   /*Service section*/
+  
+#services .service-bottom .service-item{
+    flex-basis: 45%;
+    margin: 2.5%;
+    width: 100%;
+}
+
+   /*End Service section*/
+
+   /* Project section*/
+   #projects .project-item:nth-child(even){
+       flex-direction: row-reverse;
+   }
+   #projects .project-item{
+       flex-direction: row;
+       height: 400px;
+       margin: 0;
+       width: 100%;
+       border-radius: 0mm;
+   }
+   
+   #projects .all-projects .project-info{
+       height: 100%;
+   }
+   #projects .all-projects .project-img{
+       height: 100%;
+   }
+   
+   /*End Project section*/
+
+   /*About section*/
+   #About .About{
+       flex-direction: row;
+   }
+   #About .col-left{
+       width: 600px;
+       height: 400px;
+       padding-left: 60px;
+   }
+   #About .col-left .about-img::after{
+left: -45px;
+top: 34px;
+height: 98%;
+width: 98%;
+border: 10px solid rgb(50, 125, 175);
+}
+#About .col-right{
+    text-align: left;
+    padding: 30px;
+}
+#About .col-right h1{
+    text-align: left;
+}
+   /*End About section*/
+
+   /*Contact section*/
+#contact .contact{
+    flex-direction: column;
+    padding: 100px 0;
+    align-items: center;
+    justify-content: center;
+    min-height: 20vh;
+    margin-bottom: 500px;
+}
+#contact .contact-items{
+    width: 100%;
+    min-width: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0;
+    padding: 20px;
+}
+#contact .contact-item{
+    margin: 20px;
+    flex-direction: row;
+    flex-basis: 33%;
+    margin: 1.5%;
+}
+#contact .contact-item .icon{
+    height: 100%;
+ padding-right: 20px;
+ }
+#contact .contact-item .icon img{
+    object-fit: contain;
+}
+contact .contact-item .contact-info{
+    width: 100%;
+    text-align: left;
+    padding-left: 20px;
+}
+   /*End Contact section*/
+
+}
+
+/*     End Media Query for Tablet*/
+
+/*     Media Query for Desctop*/
+
+@media only screen and (min-width:1200px){
+    /* Header */
+    #header .hamburger{
+        display: none;
+    }
+    #header .nav-list ul{
+        position: initial;
+        display: block;
+        height: auto;
+        width: fit-content;
+        background-color: transparent;
+
+    }
+    #header .nav-list ul li{
+        display: inline-block;
+    }
+    #header .nav-list ul li a{
+        font-size: 2rem;
+        letter-spacing: .3rem;
+    }
+    #header .nav-list ul a::after{
+        display: none;
+    }
+    #header .nav-list ul li:hover a{
+        color: #AB847E;
+    }
+    /* End Header */
+    #services .service-bottom .service-item{
+        flex-basis: 22%;
+        margin: 1.5%;
+        min-height: 100%;
+    }
+     {
+    width: 100%;
+}
+
+ #About .col-right{
+    margin-left: 30px;
+ }
+ #About .col-right h2{
+    font-size: 1.6rem;
+    letter-spacing: .3rem;
+ }
+ #About .col-right p{
+    font-size: 1.3rem;
+    letter-spacing: .1rem;
+    } 
+}
+/*     End Media Query for Desktop*/
+
