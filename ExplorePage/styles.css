@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -58,9 +60,10 @@ background-size: cover;
     color: white;
     top: 50%;
     left: 50%;
-    font-size: 6rem;
+    font-size: 7rem;
     transform: translate(-50px, -250px);
     z-index: 3;
+    font-family: 'Rancho', cursive;
 }
 /* End Container Div */
 
@@ -83,16 +86,19 @@ background-size: cover;
     font-size: .6rem;    
 }
 .content-images .mnt{
-    margin-left: 5%;
+    margin: 5%;
 
 }
 
 .content-images img{
+    margin-top: 40px;
     width: 100%;
-    padding: 5%;
     margin-top: 10px;
     object-fit: cover;
     object-position: center center;
+    border: 2px solid #fff;
+    border-radius: 2%;
+    box-shadow: 3px 2px 2px #fff;
 } 
 
 .text {
@@ -115,7 +121,7 @@ background-size: cover;
         z-index: 2;
     }
     .container .main-title {
-        font-size: 3.8rem;
+        font-size: 5rem;
         transform: translateY(-200%);
     }
 
