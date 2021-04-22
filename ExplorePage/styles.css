@@ -6,10 +6,12 @@
     font-family: "Poppins", sans-serif;
 
   }
+
+/* Container Div */
 nav{
 position: absolute;
 display: flex;
-z-index: 2;
+z-index: 6;
 padding: 3rem 10rem;
 justify-content: space-between;
 font-size: 1.2rem;
@@ -30,30 +32,37 @@ width: 100%;
 
 
 .container {
+
 min-height: 100vh;
 background-color: black;
-min-width: 100%;
+width: 100%;
 background-size: cover;
 }
 
-.container img {
+.container .bg1, .me {
 
     width: 100%;
     position: absolute;
     height: 110vh;
     object-fit: cover;
-    z-index: 1;
+   z-index: 1; 
 
 }
+.container .meTach, .me4Tach{
+    height: 0;
+    width: 0;
+}
+
 .container .main-title{
     position: absolute;
     color: white;
     top: 50%;
     left: 50%;
     font-size: 6rem;
-    transform: translate(-10%);
-    z-index: 2;
+    transform: translate(-50px, -250px);
+    z-index: 3;
 }
+/* End Container Div */
 
 /* Content Div */
 
@@ -61,7 +70,7 @@ background-size: cover;
     width: 100%;
     background-color: black;
     min-height: 100vh;
-    z-index: 2;
+    z-index: 7;
     position: absolute;
 
 }
@@ -78,15 +87,53 @@ background-size: cover;
 
 }
 
- .content-images img{
+.content-images img{
     width: 100%;
     padding: 5%;
     margin-top: 10px;
     object-fit: cover;
     object-position: center center;
- } 
+} 
 
 .text {
-    padding: 2rem 15rem;
-    font-size: .8rem;
-  }
+    padding: 2rem 10rem;
+    font-size: 1rem;
+}
+
+/* End Content Div */
+
+@media only screen and (max-width: 950px){
+    
+    .container .meTach, .me4Tach{
+        width: 100%;
+        position: absolute;
+        height: 110vh;
+        object-fit: cover;
+        z-index: 1;
+    }
+    .container  .me4Tach{
+        z-index: 2;
+    }
+    .container .main-title {
+        font-size: 3.8rem;
+        transform: translateY(-200%);
+    }
+
+    nav h4 {
+        margin-right: 50px;
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .content-images{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 70px;
+    }
+
+    .text{
+        font-size: .8rem;
+        padding: 1rem 5rem;
+    }
+
+} 
